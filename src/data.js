@@ -1,5 +1,14 @@
 import heroImage from "./assets/images/pic1.png"
-
+import signupFormImage from "./assets/images/signup-form.jpg"
+import adminDashboardImage from "./assets/images/admin-dashboard.jpg"
+import libraryImage from "./assets/images/library.jpg"
+import ticTacToeImage from "./assets/images/ticTacToe.jpg"
+import restaurantPageImage from "./assets/images/restaurant.jpg"
+import toDoListImage from "./assets/images/toDoList.jpg"
+import weatherAppImage from "./assets/images/weather-app.jpg"
+import battleshipImage from "./assets/images/battleship.jpg"
+import memoryCardImage from "./assets/images/memoryCard.jpg"
+import shoppingCartImage from "./assets/images/shopping-cart.jpg"
 export const data = [
     {
         heroData: {
@@ -53,8 +62,9 @@ export const data = [
             {
                 id: 1,
                 projectName: "Signup Form",
-                projectDescription: "Description of Project 1",
+                projectDescription: "A signup form with validation and a password strength meter.",
                 projectLink: "https://xxemat20xx.github.io/ODIN-Signup-form/",
+                projectImage: signupFormImage,
                 techUsed: [
                     {
                         id: 1,
@@ -69,8 +79,9 @@ export const data = [
             {
                 id: 2,
                 projectName: "Admin Dashboard",
-                projectDescription: "Description of Project 2",
+                projectDescription: "A dashboard odin project using grid and flexbox.",
                 projectLink: "https://xxemat20xx.github.io/Admin-Dashboard/",
+                projectImage: adminDashboardImage,
                 techUsed: [
                     {
                         id: 1,
@@ -85,8 +96,9 @@ export const data = [
             {
                 id: 3,
                 projectName: "Library",
-                projectDescription: "Description of Project 3",
+                projectDescription: "First javascript project with DOM manipulation.",
                 projectLink: "https://xxemat20xx.github.io/Library/",
+                projectImage: libraryImage,
                 techUsed: [
                     {
                         id: 1,
@@ -105,8 +117,9 @@ export const data = [
             {
                 id: 4,
                 projectName: "Tic Tac Toe",
-                projectDescription: "Description of Project 4",
+                projectDescription: "A tic tac toe game with a simple UI.",
                 projectLink: "https://xxemat20xx.github.io/TicTacToe/",
+                projectImage: ticTacToeImage,
                 techUsed: [
                     {
                         id: 1,
@@ -125,8 +138,9 @@ export const data = [
             {
                 id: 5,
                 projectName: "Restaurant Page",
-                projectDescription: "Description of Project 5",
+                projectDescription: "A restaurant page with a simple UI.",
                 projectLink: "https://xxemat20xx.github.io/RestaurantPage-ODIN/",
+                projectImage: restaurantPageImage,
                 techUsed: [
                     {
                         id: 1,
@@ -146,8 +160,9 @@ export const data = [
             {
                 id: 6,
                 projectName: "To-Do List",
-                projectDescription: "Description of Project 6",
+                projectDescription: "To-Do list with local storage.",
                 projectLink: "https://xxemat20xx.github.io/OdinProject-Todolist/",
+                projectImage: toDoListImage,
                 techUsed: [
                     {
                         id: 1,
@@ -166,8 +181,9 @@ export const data = [
             {
                 id: 7,
                 projectName: "Weather App",
-                projectDescription: "Description of Project 7",
+                projectDescription: "A weather app with API integration.",
                 projectLink: "https://xxemat20xx.github.io/OdinProject--WeatherApp/",
+                projectImage: weatherAppImage,
                 techUsed: [
                     {
                         id: 1,
@@ -186,8 +202,9 @@ export const data = [
             {
                 id: 8,
                 projectName: "Battleship",
-                projectDescription: "Description of Project 8",
+                projectDescription: "A battleship game computer vs player.",
                 projectLink: "https://xxemat20xx.github.io/OdinProject-Battleship/",
+                projectImage: battleshipImage,
                 techUsed: [
                     {
                         id: 1,
@@ -206,8 +223,9 @@ export const data = [
             {
                 id: 9,
                 projectName: "Memory Card",
-                projectDescription: "Description of Project 9",
+                projectDescription: "First react project with API integration.",
                 projectLink: "https://xxemat20xx.github.io/Memory-card/",
+                projectImage: memoryCardImage,
                 techUsed: [
                     {
                         id: 1,
@@ -230,8 +248,9 @@ export const data = [
             {
                 id: 10,
                 projectName: "Shopping Cart",
-                projectDescription: "Description of Project 10",
+                projectDescription: "FakeStore API integration with cart functionality.",
                 projectLink: "https://odinproject-shoppingcart.netlify.app/",
+                projectImage: shoppingCartImage,
                 techUsed: [
                     {
                         id: 1,

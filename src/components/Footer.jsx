@@ -1,20 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { FaGithub, FaLinkedin, FaEnvelope, FaCode } from 'react-icons/fa'
+import useScrollAnimation from '../hooks/useScrollAnimation'
 
 const Footer = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
+  const [contentRef, isContentVisible] = useScrollAnimation(0.2);
+  const [copyrightRef, isCopyrightVisible] = useScrollAnimation(0.2);
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className='bg-gray-900 text-white py-8'>
       <div className='container mx-auto px-4'>
-        <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 transform transition-all duration-1000 ease-out
-                      ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
+        <div ref={contentRef} className={`grid grid-cols-1 md:grid-cols-3 gap-8 transform transition-all duration-1000 ease-out
+                      ${isContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
           {/* Contact Info */}
           <div className='text-center md:text-left'>
             <h3 className='text-xl font-bold mb-4'>Contact</h3>
@@ -63,8 +60,8 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className={`text-center mt-8 pt-8 border-t border-gray-800 transform transition-all duration-1000 ease-out delay-300
-                      ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
+        <div ref={copyrightRef} className={`text-center mt-8 pt-8 border-t border-gray-800 transform transition-all duration-1000 ease-out delay-300
+                      ${isCopyrightVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
           <p>&copy; {currentYear} Your Name. All rights reserved.</p>
         </div>
       </div>
