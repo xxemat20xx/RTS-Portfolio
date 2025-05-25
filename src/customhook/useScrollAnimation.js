@@ -7,29 +7,26 @@ const useScrollAnimation = (threshold = 0.2) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Update our state when observer callback fires
-        setIsVisible(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setIsVisible(true); // Trigger once
+          observer.disconnect(); // optional: remove if you want it to re-trigger
+        }
       },
       {
-        threshold: threshold,
-        rootMargin: '0px',
+        threshold,
       }
     );
 
-    const currentElement = elementRef.current;
-
-    if (currentElement) {
-      observer.observe(currentElement);
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
     }
 
     return () => {
-      if (currentElement) {
-        observer.unobserve(currentElement);
-      }
+      observer.disconnect();
     };
   }, [threshold]);
 
   return [elementRef, isVisible];
 };
 
-export default useScrollAnimation; 
+export default useScrollAnimation;

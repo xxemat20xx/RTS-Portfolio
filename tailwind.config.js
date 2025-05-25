@@ -1,31 +1,24 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       keyframes: {
-        'slide-in': {
-          '0%': { 
+        'slide-in-left': {
+          '0%': {
             transform: 'translateX(-100%)',
-            opacity: '0'
+            opacity: '0',
           },
-          '100%': { 
+          '100%': {
             transform: 'translateX(0)',
-            opacity: '1'
-          }
+            opacity: '1',
+          },
         },
-        'slide-out': {
-          '0%': { transform: 'translateX(0)', opacity: '1' },
-          '100%': { transform: 'translateX(-100%)', opacity: '0' }
-        }
       },
       animation: {
-        'slide-in': 'slide-in 1s ease-out forwards',
-        'slide-out': 'slide-out 1s ease-out forwards'
-      }
+        'slide-in-left': 'slide-in-left 1s ease-out forwards',
+      },
     },
   },
   plugins: [],
-} 
+}
