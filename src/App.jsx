@@ -1,20 +1,20 @@
-import React from 'react'
-import Hero from './components/Hero'
-import Project from './components/Project'
-import Footer from './components/Footer'
-import { data } from './data'
-import './styles/typewriter.css'
+  import React from 'react'
 
-const App = () => {
-  console.log(data[0].projectData[0]);
-  
-  return (
-    <div>
-      <Hero data={data} />
-      <Project data={data} />
-      <Footer />
-    </div>
-  )
-}
+  import { data } from './data'
+  import Hero from './components/Hero'
+  import Projects from './components/Projects'
+  import Footer from './components/Footer'
+  const App = () => {
+ 
+    
+    return (
+      <main className='bg-gray-900 text-white 
+      py-12 px-12 flex flex-col items-center justify-center'>
+        <Hero />
+        <Projects />
+        <Footer />
+      </main>
+    )
+  }
 
-export default App
+  export default App

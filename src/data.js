@@ -9,7 +9,7 @@ import weatherAppImage from "./assets/images/weather-app.jpg"
 import battleshipImage from "./assets/images/battleship.jpg"
 import memoryCardImage from "./assets/images/memoryCard.jpg"
 import shoppingCartImage from "./assets/images/shopping-cart.jpg"
-export const data = [
+export const data = 
     {
         heroData: {
             id: 1,
@@ -277,4 +277,3 @@ export const data = [
             
         ]
     }
-]
