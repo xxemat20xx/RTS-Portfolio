@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   base: '/RTS-Portfolio/',
-  plugins: [react()],
+  plugins: [react(), tailwindcss()],
 });
