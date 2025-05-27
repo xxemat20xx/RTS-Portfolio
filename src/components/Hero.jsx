@@ -32,7 +32,7 @@ const Hero = () => {
           <h1 className="text-4xl font-bold mb-4 md:text-6xl">
             Hi I'm <span className="text-violet-500 font-extrabold">{heroData.name}</span>
           </h1>
-          <p className="text-gray-400 mb-4 max-w-3xl">{heroData.heroParagraph}</p>
+          <p className="text-gray-400 mb-4 max-w-3xl text-lg md:text-xl">{heroData.heroParagraph}</p>
           <div className="my-4">
             <button className="bg-violet-500 text-white px-4 py-2 rounded-full hover:bg-violet-600 transition-all duration-300 cursor-pointer">
               More about me &rarr;
@@ -45,7 +45,7 @@ const Hero = () => {
                 <img
                   src={image.techStackImage}
                   alt=""
-                  className="w-10 h-10 transition-all duration-700 ease-out"
+                  className="w-8 h-8 md:w-10 md:h-10 transition-all duration-700 ease-out"
                 />
               </div>
             ))}

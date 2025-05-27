@@ -16,7 +16,7 @@ const Footer = () => {
                 <img src="https://skillicons.dev/icons?i=github" alt="GitHub" className="w-6 h-6" />
                 GitHub
               </a>
-              <a href="https://linkedin.com/in/yourprofile" 
+              <a href="https://www.linkedin.com/in/raymart-t-santiago-024aa41b2/" 
                  className="flex items-center gap-2 hover:text-violet-500 transition-colors"
                  target="_blank" 
                  rel="noopener noreferrer">
@@ -32,7 +32,7 @@ const Footer = () => {
           <div className="flex flex-col">
             <h3 className="text-xl font-bold mb-4">Contact Info</h3>
             <p className="text-gray-400">Phone: +63 912 345 6789</p>
-            <p className="text-gray-400">Email: your.email@example.com</p>
+            <p className="text-gray-400">Email: emat5252@gmail.com</p>
           </div>
 
           {/* Special Thanks */}
