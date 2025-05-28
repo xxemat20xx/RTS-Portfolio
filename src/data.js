@@ -9,6 +9,8 @@ import weatherAppImage from "./assets/images/weather-app.jpg"
 import battleshipImage from "./assets/images/battleship.jpg"
 import memoryCardImage from "./assets/images/memoryCard.jpg"
 import shoppingCartImage from "./assets/images/shopping-cart.jpg"
+import responsiveLandingPageImage from "./assets/images/responsiveLandingPageImage.jpg"
+
 export const data = 
     {
         heroData: {
@@ -271,6 +273,27 @@ export const data =
                     {
                         id: 5,
                         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+                    },
+                ]
+            },
+            {
+                id: 11,
+                projectName: "Responsive Landing Page",
+                projectDescription: "Responsive landing page with a simple UI and image slider.",
+                projectLink: "https://xxemat20xx.github.io/Old-Project---Responsive-Website/",
+                projectImage: responsiveLandingPageImage,
+                techUsed: [
+                    {
+                        id: 1,
+                        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+                    },
+                    {
+                        id: 2,
+                        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+                    },
+                    {
+                        id: 3,
+                        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
                     },
                 ]
             },
