@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.tech-icon img {
+  filter: invert(1);
+}

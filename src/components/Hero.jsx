@@ -39,7 +39,7 @@ const Hero = () => {
             </button>
           </div>
           <h2 className="text-xl font-bold my-4">Tech Stack :</h2>
-          <div className="tech-stack flex flex-wrap gap-4">
+          <div className="tech-stack flex flex-wrap gap-4 max-w-[450px]">
             {techStackImages.map((image) => (
               <div key={image.id} className="tech-stack-image">
                 <img

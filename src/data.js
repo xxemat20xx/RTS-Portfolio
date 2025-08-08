@@ -21,44 +21,62 @@ export const data =
         },
         techStackData: {
             id: 1,
-            techStackImage: [
-                {
-                    id: 1,
-                    techStackImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
-                },
-                {
-                    id: 2,
-                    techStackImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
-                },
-                {
-                    id: 3,
-                    techStackImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
-                },
-                {
-                    id: 4,
-                    techStackImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-                },
-                {
-                    id: 5,
-                    techStackImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
-                },
-                {
-                    id: 6,
-                    techStackImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg",
-                },
-                {
-                    id: 7,
-                    techStackImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg",
-                },
-                {
-                    id: 8,
-                    techStackImage: "https://skillicons.dev/icons?i=github",
-                },
-                {
-                    id: 9,
-                    techStackImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
-                },
-            ]
+  techStackImage: [
+    {
+        id: 1,
+        techStackImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+    },
+    {
+        id: 2,
+        techStackImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+    },
+    {
+        id: 3,
+        techStackImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+    },
+    {
+        id: 4,
+        techStackImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    },
+    {
+        id: 5,
+        techStackImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+    },
+    {
+        id: 6,
+        techStackImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg",
+    },
+    {
+        id: 7,
+        techStackImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg",
+    },
+    {
+        id: 8,
+        techStackImage: "https://skillicons.dev/icons?i=github",
+    },
+    {
+        id: 9,
+        techStackImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+    },
+    {
+        id: 10,
+        techStackImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+    },
+    {
+    id: 11,
+    techStackImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+  
+    },
+    {
+        id: 12,
+        techStackImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+    },
+    {
+        id: 13,
+        techStackImage: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
+    },
+]
+
         },
         projectData: [
             {
