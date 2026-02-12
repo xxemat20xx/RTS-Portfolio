@@ -1,61 +1,93 @@
-import React, { useRef, useEffect } from 'react';
-import { data } from '../data';
-import { motion, useAnimation, useInView } from 'framer-motion';
+import React from "react";
+import { data } from "../data";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
 
 const ProjectCard = ({ project }) => {
-  const { id, projectName, projectDescription, projectLink, projectImage, techUsed } = project;
-
-  const cardRef = useRef(null);
-  const inView = useInView(cardRef, { triggerOnce: false });
-  const controls = useAnimation();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start({ x: 0, opacity: 1 });
-    } else {
-      controls.start({ x: -100, opacity: 0 });
-    }
-  }, [inView, controls]);
+  const {
+    projectName,
+    projectDescription,
+    projectLink,
+    projectImage,
+    techUsed,
+  } = project;
 
   return (
     <motion.div
-      key={id}
-      ref={cardRef}
-      animate={controls}
-      initial={{ x: -100, opacity: 0 }}
-      transition={{ duration: 0.5 }}
-      className="cards bg-gray-800 rounded-lg p-4 text-white"
+      variants={cardVariants}
+      whileHover={{ y: -8 }}
+      className="group bg-gray-900/70 backdrop-blur border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-violet-500/10 transition-all duration-300"
+      
     >
-      <div className="card-image">
+      {/* Image */}
+      <div className="relative overflow-hidden">
         <img
           src={projectImage}
-          alt={projectName}
-          className="w-full h-full object-cover rounded-lg"
+          alt={`${projectName} preview`}
+          loading="lazy"
+          className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
         />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-70"></div>
       </div>
-      <div className="card-content my-4">
-        <h3 className="card-title">{projectName}</h3>
-        <p className="card-description">{projectDescription}</p>
-        <div className="card-tech flex flex-wrap gap-2">
-          {techUsed.map((tech) => {
-            const { id, icon, name } = tech;
-            return (
-              <div key={id} className="tech-icon my-4">
-                <img src={icon} alt={name} className="w-6 h-6" />
-              </div>
-            );
-          })}
+
+      {/* Content */}
+      <div className="p-6 space-y-4">
+        <h3 className="text-xl font-semibold text-white">
+          {projectName}
+        </h3>
+
+        <p className="text-gray-400 text-sm leading-relaxed">
+          {projectDescription}
+        </p>
+
+        {/* Tech Stack */}
+        <div className="flex flex-wrap gap-2">
+          {techUsed.map((tech) => (
+            <div
+              key={tech.id}
+              className="flex items-center gap-1 px-3 py-1 text-xs bg-gray-800 text-gray-300 rounded-full border border-gray-700"
+            >
+              {tech.icon && (
+                <img
+                  src={tech.icon}
+                  alt={tech.name || "tech icon"}
+                  className="w-4 h-4"
+                />
+              )}
+              <span>{tech.name}</span>
+            </div>
+          ))}
         </div>
-        <div className="card-link my-4">
-          <a
-            href={projectLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-violet-500 text-white px-4 py-2 rounded-full hover:bg-violet-600 transition-all duration-300 inline-block"
-          >
-            View Project
-          </a>
-        </div>
+
+        {/* Button */}
+        <a
+          href={projectLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`View ${projectName}`}
+          className="inline-flex items-center gap-2 text-sm font-medium text-violet-400 hover:text-violet-300 transition-colors"
+        >
+          View Project →
+        </a>
       </div>
     </motion.div>
   );
@@ -64,13 +96,38 @@ const ProjectCard = ({ project }) => {
 const Projects = () => {
   const { projectData } = data;
 
+  // Sort projects from newest to oldest
+  const sortedProjects = [...projectData].sort((a, b) => b.id - a.id);
+
   return (
-    <section className="projects-section my-10 min-h-screen">
-      <h2 className="text-xl font-bold my-4">Projects :</h2>
-      <div className="project-container grid grid-cols-1 md:grid-cols-3 gap-4 my-10">
-        {projectData.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
+    <section className="py-24 px-6 relative">
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold" id="projects"> 
+            Featured{" "}
+            <span className="bg-gradient-to-r from-violet-500 to-purple-400 bg-clip-text text-transparent">
+              Projects
+            </span>
+          </h2>
+          <p className="text-gray-500 mt-4 max-w-xl mx-auto">
+            A selection of projects I've built using modern technologies.
+          </p>
+        </div>
+
+        {/* Projects Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {sortedProjects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </motion.div>
       </div>
     </section>
   );
