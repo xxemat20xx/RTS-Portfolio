@@ -67,18 +67,19 @@ const Hero = () => {
 
           {/* Buttons */}
           <Motion.div variants={fadeUp} className="flex gap-4 flex-wrap">
-            <a
-              href="#about"
-              className="bg-violet-600 hover:bg-violet-700 px-6 py-3 rounded-full text-white font-medium transition duration-300 shadow-lg shadow-violet-600/30"
-            >
-              More About Me →
-            </a>
+
 
             <a
               href="#projects"
               className="border border-gray-600 hover:border-violet-500 px-6 py-3 rounded-full text-gray-300 hover:text-white transition duration-300"
             >
               View Projects
+            </a>
+            <a
+              href="#contact"
+              className="bg-violet-600 hover:bg-violet-700 px-6 py-3 rounded-full text-white font-medium transition duration-300 shadow-lg shadow-violet-600/30"
+            >
+              Contact Me →
             </a>
           </Motion.div>
 
