@@ -34,9 +34,7 @@ const ProjectCard = ({ project }) => {
       variants={cardVariants}
       whileHover={{ y: -8 }}
       className="group bg-gray-900/70 backdrop-blur border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-violet-500/10 transition-all duration-300"
-      
     >
-      {/* Image */}
       <div className="relative overflow-hidden">
         <img
           src={projectImage}
@@ -44,22 +42,16 @@ const ProjectCard = ({ project }) => {
           loading="lazy"
           className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
         />
-
-        {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-70"></div>
       </div>
 
-      {/* Content */}
       <div className="p-6 space-y-4">
-        <h3 className="text-xl font-semibold text-white">
-          {projectName}
-        </h3>
+        <h3 className="text-xl font-semibold text-white">{projectName}</h3>
 
         <p className="text-gray-400 text-sm leading-relaxed">
           {projectDescription}
         </p>
 
-        {/* Tech Stack */}
         <div className="flex flex-wrap gap-2">
           {techUsed.map((tech) => (
             <div
@@ -78,7 +70,6 @@ const ProjectCard = ({ project }) => {
           ))}
         </div>
 
-        {/* Button */}
         <a
           href={projectLink}
           target="_blank"
@@ -95,17 +86,13 @@ const ProjectCard = ({ project }) => {
 
 const Projects = () => {
   const { projectData } = data;
-
-  // Sort projects from newest to oldest
   const sortedProjects = [...projectData].sort((a, b) => b.id - a.id);
 
   return (
     <section className="py-24 px-6 relative">
       <div className="max-w-7xl mx-auto">
-        
-        {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold" id="projects"> 
+          <h2 className="text-3xl md:text-4xl font-bold" id="projects">
             Featured{" "}
             <span className="bg-gradient-to-r from-violet-500 to-purple-400 bg-clip-text text-transparent">
               Projects
@@ -116,12 +103,10 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* Projects Grid */}
         <Motion.div
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          animate="visible" // ✅ Mobile safe
           className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
         >
           {sortedProjects.map((project) => (
