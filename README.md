@@ -19,3 +19,5 @@ A modern, responsive portfolio website built with React and Tailwind CSS.
 - Framer motion
 - CSS Animations
 
+npm run build 
+npm run deploy - to update the pages
