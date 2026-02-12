@@ -1,5 +1,5 @@
 import { data } from "../data";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 const container = {
   hidden: {},
@@ -42,13 +42,13 @@ const Hero = () => {
       <div className="max-w-7xl w-full grid md:grid-cols-2 gap-16 items-center relative z-10">
         
         {/* LEFT SIDE */}
-        <motion.div
+        <Motion.div
           variants={container}
           initial="hidden"
           animate="visible"
           className="space-y-8"
         >
-          <motion.h1
+          <Motion.h1
             variants={fadeUp}
             className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
           >
@@ -56,17 +56,17 @@ const Hero = () => {
             <span className="bg-gradient-to-r from-violet-500 to-purple-400 bg-clip-text text-transparent text-4xl md:text-6xl lg:text-7x">
               {heroData.name}
             </span>
-          </motion.h1>
+          </Motion.h1>
 
-          <motion.p
+          <Motion.p
             variants={fadeUp}
             className="text-gray-400 text-lg md:text-xl max-w-xl leading-relaxed"
           >
             {heroData.heroParagraph}
-          </motion.p>
+          </Motion.p>
 
           {/* Buttons */}
-          <motion.div variants={fadeUp} className="flex gap-4 flex-wrap">
+          <Motion.div variants={fadeUp} className="flex gap-4 flex-wrap">
             <a
               href="#about"
               className="bg-violet-600 hover:bg-violet-700 px-6 py-3 rounded-full text-white font-medium transition duration-300 shadow-lg shadow-violet-600/30"
@@ -80,23 +80,23 @@ const Hero = () => {
             >
               View Projects
             </a>
-          </motion.div>
+          </Motion.div>
 
           {/* Tech Stack */}
          {/* Tech Stack */}
-<motion.div variants={fadeUp}>
+<Motion.div variants={fadeUp}>
   <h2 className="text-sm uppercase tracking-widest text-gray-500 mb-4">
     Tech Stack
   </h2>
 
-  <motion.div
+  <Motion.div
     variants={container}
     initial="hidden"
     animate="visible"
     className="flex flex-wrap gap-5"
   >
     {techStackImages.map((tech) => (
-      <motion.div
+      <Motion.div
         key={tech.id}
         variants={fadeUp}
         whileHover={{ y: -6 }}
@@ -111,15 +111,15 @@ const Hero = () => {
           loading="lazy"
           className="w-8 h-8 md:w-10 md:h-10 transition-transform duration-300 group-hover:scale-110"
         />
-      </motion.div>
+      </Motion.div>
     ))}
-      </motion.div>
-    </motion.div>
+      </Motion.div>
+    </Motion.div>
 
-        </motion.div>
+        </Motion.div>
 
         {/* RIGHT SIDE IMAGE */}
-        <motion.div
+        <Motion.div
           {...floatAnimation}
           animate="animate"
           className="flex justify-center relative display hidden lg:block"
@@ -132,7 +132,7 @@ const Hero = () => {
             alt={`${heroData.name} portrait`}
             className="relative z-10 w-[280px] md:w-[400px] lg:w-[500px] xl:w-[600px] object-contain drop-shadow-2xl"
           />
-        </motion.div>
+        </Motion.div>
       </div>
     </section>
   );

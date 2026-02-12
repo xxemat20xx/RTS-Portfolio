@@ -1,6 +1,6 @@
 import React from "react";
 import { data } from "../data";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 const containerVariants = {
   hidden: {},
@@ -30,7 +30,7 @@ const ProjectCard = ({ project }) => {
   } = project;
 
   return (
-    <motion.div
+    <Motion.div
       variants={cardVariants}
       whileHover={{ y: -8 }}
       className="group bg-gray-900/70 backdrop-blur border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-violet-500/10 transition-all duration-300"
@@ -89,7 +89,7 @@ const ProjectCard = ({ project }) => {
           View Project →
         </a>
       </div>
-    </motion.div>
+    </Motion.div>
   );
 };
 
@@ -117,7 +117,7 @@ const Projects = () => {
         </div>
 
         {/* Projects Grid */}
-        <motion.div
+        <Motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -127,7 +127,7 @@ const Projects = () => {
           {sortedProjects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
-        </motion.div>
+        </Motion.div>
       </div>
     </section>
   );
