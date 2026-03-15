@@ -221,24 +221,7 @@ export const data = {
         TECH.TAILWIND,
       ],
     },
-    {
-      id: 14,
-      projectName: "MERN HR Management App",
-      projectDescription:
-        "A MERN stack HR management app to track employees, manage departments, and handle basic HR tasks with a clean and responsive interface.",
-      projectLink: "https://mern-employee-management-oe7p.onrender.com/",
-      projectImage: HRApp,
-      techUsed: [
-        TECH.HTML,
-        TECH.CSS,
-        TECH.JS,
-        TECH.MONGODB,
-        TECH.REACT,
-        TECH.NODE,
-        TECH.EXPRESS,
-        TECH.TAILWIND,
-      ],
-    },
+
     {
       id: 15,
       projectName: "Real Estate App with Admin CMS",
