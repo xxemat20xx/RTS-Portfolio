@@ -1,7 +1,4 @@
 import heroImage from "./assets/images/pic1.png";
-import signupFormImage from "./assets/images/signup-form.jpg";
-import adminDashboardImage from "./assets/images/admin-dashboard.jpg";
-import libraryImage from "./assets/images/library.jpg";
 import ticTacToeImage from "./assets/images/ticTacToe.jpg";
 import restaurantPageImage from "./assets/images/restaurant.jpg";
 import toDoListImage from "./assets/images/toDoList.jpg";
@@ -10,9 +7,10 @@ import battleshipImage from "./assets/images/battleship.jpg";
 import memoryCardImage from "./assets/images/memoryCard.jpg";
 import shoppingCartImage from "./assets/images/shopping-cart.jpg";
 import responsiveLandingPageImage from "./assets/images/responsiveLandingPageImage.jpg";
-import BookingApp from './assets/images/BookingApp.png'
-import InventoryApp from './assets/images/InventoryApp.png'
-import HRApp from './assets/images/HRApp.png'
+import BookingApp from "./assets/images/BookingApp.png";
+import InventoryApp from "./assets/images/InventoryApp.png";
+import HRApp from "./assets/images/HRApp.png";
+import RealEstate from "./assets/images/realestate.png";
 /* ===========================
    TECH DEFINITIONS (Reusable)
 =========================== */
@@ -68,6 +66,11 @@ const TECH = {
     name: "MongoDB",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
   },
+  CLOUDINARY: {
+    id: "cloudinary",
+    name: "Cloudinary",
+    icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/cloudinary.svg",
+  },
 };
 
 /* ===========================
@@ -77,7 +80,7 @@ const TECH = {
 export const data = {
   heroData: {
     id: 1,
-    name: "Raymart S.",
+    name: "Raymart",
     heroParagraph:
       "I'm a self-taught web developer passionate about creating interactive and user-friendly web applications. I enjoy tackling challenges, learning new technologies, and continuously improving my skills in front-end development. Soon, I’ll be diving into back-end development as well.",
     heroImage: heroImage,
@@ -100,28 +103,20 @@ export const data = {
   },
 
   projectData: [
-
-
     {
       id: 4,
       projectName: "Tic Tac Toe",
-      projectDescription:
-        "Interactive Tic Tac Toe game built with JavaScript.",
-      projectLink:
-        "https://xxemat20xx.github.io/TicTacToe/",
+      projectDescription: "Interactive Tic Tac Toe game built with JavaScript.",
+      projectLink: "https://xxemat20xx.github.io/TicTacToe/",
       projectImage: ticTacToeImage,
       techUsed: [TECH.HTML, TECH.CSS, TECH.JS],
     },
 
-
-
     {
       id: 6,
       projectName: "To-Do List",
-      projectDescription:
-        "To-Do app with Local Storage functionality.",
-      projectLink:
-        "https://xxemat20xx.github.io/OdinProject-Todolist/",
+      projectDescription: "To-Do app with Local Storage functionality.",
+      projectLink: "https://xxemat20xx.github.io/OdinProject-Todolist/",
       projectImage: toDoListImage,
       techUsed: [TECH.HTML, TECH.CSS, TECH.JS],
     },
@@ -129,10 +124,8 @@ export const data = {
     {
       id: 7,
       projectName: "Weather App",
-      projectDescription:
-        "Weather app with API integration.",
-      projectLink:
-        "https://xxemat20xx.github.io/OdinProject--WeatherApp/",
+      projectDescription: "Weather app with API integration.",
+      projectLink: "https://xxemat20xx.github.io/OdinProject--WeatherApp/",
       projectImage: weatherAppImage,
       techUsed: [TECH.HTML, TECH.CSS, TECH.JS],
     },
@@ -140,10 +133,8 @@ export const data = {
     {
       id: 8,
       projectName: "Battleship",
-      projectDescription:
-        "Battleship game with player vs computer logic.",
-      projectLink:
-        "https://xxemat20xx.github.io/OdinProject-Battleship/",
+      projectDescription: "Battleship game with player vs computer logic.",
+      projectLink: "https://xxemat20xx.github.io/OdinProject-Battleship/",
       projectImage: battleshipImage,
       techUsed: [TECH.HTML, TECH.CSS, TECH.JS],
     },
@@ -151,10 +142,8 @@ export const data = {
     {
       id: 9,
       projectName: "Memory Card",
-      projectDescription:
-        "React project with API integration.",
-      projectLink:
-        "https://xxemat20xx.github.io/Memory-card/",
+      projectDescription: "React project with API integration.",
+      projectLink: "https://xxemat20xx.github.io/Memory-card/",
       projectImage: memoryCardImage,
       techUsed: [TECH.HTML, TECH.CSS, TECH.JS, TECH.REACT],
     },
@@ -162,18 +151,10 @@ export const data = {
     {
       id: 10,
       projectName: "Shopping Cart",
-      projectDescription:
-        "E-commerce app with FakeStore API and cart logic.",
-      projectLink:
-        "https://odinproject-shoppingcart.netlify.app/",
+      projectDescription: "E-commerce app with FakeStore API and cart logic.",
+      projectLink: "https://odinproject-shoppingcart.netlify.app/",
       projectImage: shoppingCartImage,
-      techUsed: [
-        TECH.HTML,
-        TECH.CSS,
-        TECH.JS,
-        TECH.REACT,
-        TECH.TAILWIND,
-      ],
+      techUsed: [TECH.HTML, TECH.CSS, TECH.JS, TECH.REACT, TECH.TAILWIND],
     },
 
     {
@@ -189,29 +170,93 @@ export const data = {
     {
       id: 12,
       projectName: "MERN Booking and Scheduling App",
-      projectDescription: "A full-stack MERN application for booking and scheduling appointments with real-time updates and user authentication.",
-      projectLink:
-        "https://mern-booking-and-scheduling-system.onrender.com/",
+      projectDescription:
+        "A full-stack MERN application for booking and scheduling appointments with real-time updates and user authentication.",
+      projectLink: "https://mern-booking-and-scheduling-system.onrender.com/",
       projectImage: BookingApp,
-      techUsed: [TECH.HTML, TECH.CSS, TECH.JS, TECH.MONGODB, TECH.REACT, TECH.NODE, TECH.EXPRESS, TECH.TAILWIND],
+      techUsed: [
+        TECH.HTML,
+        TECH.CSS,
+        TECH.JS,
+        TECH.MONGODB,
+        TECH.REACT,
+        TECH.NODE,
+        TECH.EXPRESS,
+        TECH.TAILWIND,
+      ],
     },
     {
       id: 13,
       projectName: "MERN Inventory App",
-      projectDescription: "A full-stack MERN application for managing inventory, featuring CRUD operations, and a responsive dashboard.",
-      projectLink:
-        "https://mern-inventory-app-i0bh.onrender.com/dashboard",
+      projectDescription:
+        "A full-stack MERN application for managing inventory, featuring CRUD operations, and a responsive dashboard.",
+      projectLink: "https://mern-inventory-app-i0bh.onrender.com/dashboard",
       projectImage: InventoryApp,
-      techUsed: [TECH.HTML, TECH.CSS, TECH.JS, TECH.MONGODB, TECH.REACT, TECH.NODE, TECH.EXPRESS, TECH.TAILWIND],
+      techUsed: [
+        TECH.HTML,
+        TECH.CSS,
+        TECH.JS,
+        TECH.MONGODB,
+        TECH.REACT,
+        TECH.NODE,
+        TECH.EXPRESS,
+        TECH.TAILWIND,
+      ],
     },
-        {
+    {
       id: 14,
       projectName: "MERN HR Management App",
-      projectDescription: "A MERN stack HR management app to track employees, manage departments, and handle basic HR tasks with a clean and responsive interface.",
-      projectLink:
-        "https://mern-employee-management-oe7p.onrender.com/",
+      projectDescription:
+        "A MERN stack HR management app to track employees, manage departments, and handle basic HR tasks with a clean and responsive interface.",
+      projectLink: "https://mern-employee-management-oe7p.onrender.com/",
       projectImage: HRApp,
-      techUsed: [TECH.HTML, TECH.CSS, TECH.JS, TECH.MONGODB, TECH.REACT, TECH.NODE, TECH.EXPRESS, TECH.TAILWIND,],
+      techUsed: [
+        TECH.HTML,
+        TECH.CSS,
+        TECH.JS,
+        TECH.MONGODB,
+        TECH.REACT,
+        TECH.NODE,
+        TECH.EXPRESS,
+        TECH.TAILWIND,
+      ],
+    },
+    {
+      id: 14,
+      projectName: "MERN HR Management App",
+      projectDescription:
+        "A MERN stack HR management app to track employees, manage departments, and handle basic HR tasks with a clean and responsive interface.",
+      projectLink: "https://mern-employee-management-oe7p.onrender.com/",
+      projectImage: HRApp,
+      techUsed: [
+        TECH.HTML,
+        TECH.CSS,
+        TECH.JS,
+        TECH.MONGODB,
+        TECH.REACT,
+        TECH.NODE,
+        TECH.EXPRESS,
+        TECH.TAILWIND,
+      ],
+    },
+    {
+      id: 15,
+      projectName: "Real Estate App with Admin CMS",
+      projectDescription:
+        "Real Estate Project App is a full-stack MERN web application built with modern technologies, featuring secure authentication, email integration, cloud-based image handling, map-based property viewing, virtual property tours via YouTube, and a complete Admin CMS system.",
+      projectLink: "https://www.ematsproject.store/",
+      projectImage: RealEstate,
+      techUsed: [
+        TECH.HTML,
+        TECH.CSS,
+        TECH.JS,
+        TECH.MONGODB,
+        TECH.REACT,
+        TECH.NODE,
+        TECH.EXPRESS,
+        TECH.TAILWIND,
+        TECH.CLOUDINARY,
+      ],
     },
   ],
 };
