@@ -3,3 +3,6 @@
 .tech-icon img {
   filter: invert(1);
 }
+html {
+  scroll-behavior: smooth;
+}
