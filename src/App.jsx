@@ -10,7 +10,7 @@ const App = () => {
     <>
      <ScrollProgress />
       <Navbar />
-      <main>
+      <main className="pt-20">
         <Hero />
         <Projects />
         <Footer />
