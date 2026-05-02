@@ -11,6 +11,7 @@ import BookingApp from "./assets/images/BookingApp.png";
 import InventoryApp from "./assets/images/InventoryApp.png";
 import HRApp from "./assets/images/HRApp.png";
 import RealEstate from "./assets/images/realestate.png";
+import FoodOrderingApp from "./assets/images/food-ordering.png";
 /* ===========================
    TECH DEFINITIONS (Reusable)
 =========================== */
@@ -70,6 +71,11 @@ const TECH = {
     id: "cloudinary",
     name: "Cloudinary",
     icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/cloudinary.svg",
+  },
+    PAYMONGO: {
+    id: "paymongo",
+    name: "PayMongo",
+    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8P2c6cStj8KyLnG9CJelgJtGejjnCphBbhw&s",
   },
 };
 
@@ -239,6 +245,26 @@ export const data = {
         TECH.EXPRESS,
         TECH.TAILWIND,
         TECH.CLOUDINARY,
+      ],
+    },
+        {
+      id: 16,
+      projectName: "Food Ordering App with Admin CMS",
+      projectDescription:
+        "A full-stack Food Delivery / Food Ordering Web Application built with the MERN Stack, featuring secure authentication, online payments, and an admin CMS for managing products, stores, and orders.",
+      projectLink: "https://food-delivery-app-green-eight.vercel.app/",
+      projectImage: FoodOrderingApp,
+      techUsed: [
+        TECH.HTML,
+        TECH.CSS,
+        TECH.JS,
+        TECH.MONGODB,
+        TECH.REACT,
+        TECH.NODE,
+        TECH.EXPRESS,
+        TECH.TAILWIND,
+        TECH.CLOUDINARY,
+        TECH.PAYMONGO,
       ],
     },
   ],
