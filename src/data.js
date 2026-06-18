@@ -12,6 +12,8 @@ import InventoryApp from "./assets/images/InventoryApp.png";
 import HRApp from "./assets/images/HRApp.png";
 import RealEstate from "./assets/images/realestate.png";
 import FoodOrderingApp from "./assets/images/food-ordering.png";
+import EcomApp from './assets/images/ecom-app.png'
+import EmalScheduler from './assets/images/Email-scheduler.png'
 /* ===========================
    TECH DEFINITIONS (Reusable)
 =========================== */
@@ -32,6 +34,11 @@ const TECH = {
     name: "JavaScript",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
   },
+  TYPESCRIPT: {
+    id: "typescript",
+    name: "TypeScript",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+  },
   REACT: {
     id: "react",
     name: "React",
@@ -39,8 +46,13 @@ const TECH = {
   },
   TAILWIND: {
     id: "tailwind",
-    name: "Tailwind",
+    name: "Tailwind CSS",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+  },
+  ZUSTAND: {
+    id: "zustand",
+    name: "Zustand",
+    icon: "https://raw.githubusercontent.com/pmndrs/zustand/main/examples/demo/public/favicon.ico",
   },
   GIT: {
     id: "git",
@@ -72,10 +84,20 @@ const TECH = {
     name: "Cloudinary",
     icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/cloudinary.svg",
   },
-    PAYMONGO: {
+  GOOGLE_OAUTH: {
+    id: "google-oauth",
+    name: "Google OAuth",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg",
+  },
+  PAYMONGO: {
     id: "paymongo",
     name: "PayMongo",
     icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8P2c6cStj8KyLnG9CJelgJtGejjnCphBbhw&s",
+  },
+  XENDIT: {
+    id: "xendit",
+    name: "Xendit",
+    icon: "https://seeklogo.com/images/X/xendit-logo-5C59A91C5B-seeklogo.com.png",
   },
 };
 
@@ -98,6 +120,7 @@ export const data = {
       TECH.HTML,
       TECH.CSS,
       TECH.JS,
+      TECH.TYPESCRIPT,
       TECH.REACT,
       TECH.TAILWIND,
       TECH.GIT,
@@ -247,7 +270,7 @@ export const data = {
         TECH.CLOUDINARY,
       ],
     },
-        {
+    {
       id: 16,
       projectName: "Food Ordering App with Admin CMS",
       projectDescription:
@@ -265,6 +288,51 @@ export const data = {
         TECH.TAILWIND,
         TECH.CLOUDINARY,
         TECH.PAYMONGO,
+      ],
+    },
+
+    {
+      id: 17,
+      projectName: "E-commerce App with Admin CMS",
+      projectDescription:
+        "A responsive E-commerce Web Application built with the MERN Stack, featuring secure authentication, online payments, and an admin CMS for managing products, stores, and orders.",
+      projectLink: "https://ts-ecommerce-project.vercel.app/",
+      projectImage: EcomApp,
+      techUsed: [
+        TECH.HTML,
+        TECH.CSS,
+        TECH.TYPESCRIPT,
+        TECH.ZUSTAND,
+        TECH.MONGODB,
+        TECH.REACT,
+        TECH.NODE,
+        TECH.EXPRESS,
+        TECH.TAILWIND,
+        TECH.CLOUDINARY,
+        TECH.PAYMONGO,
+        TECH.GOOGLE_OAUTH,
+        TECH.XENDIT,
+      ],
+    },
+    {
+      id: 18,
+      projectName: "Email Scheduler",
+      projectDescription:
+        "Schedule and receive a personalized email every day at your preferred time. Built with Google Authentication for seamless and secure access.",
+      projectLink: "https://email-scheduler-app-five.vercel.app/",
+      projectImage: EmalScheduler,
+      techUsed: [
+        TECH.HTML,
+        TECH.CSS,
+        TECH.TYPESCRIPT,
+        TECH.ZUSTAND,
+        TECH.MONGODB,
+        TECH.REACT,
+        TECH.NODE,
+        TECH.EXPRESS,
+        TECH.TAILWIND,
+        TECH.GOOGLE_OAUTH,
+        TECH.XENDIT,
       ],
     },
   ],
