@@ -77,9 +77,9 @@ const Hero = () => {
               <RoleRotator
                 roles={
                   heroData.roles || [
-                    "Full Stack Developer",
-                    "Frontend Engineer",
-                    "MERN Stack Developer",
+                    "Building Things for the Web",
+                    "Turning Ideas Into Apps",
+                    "Always Learning, Always Creating",
                   ]
                 }
               />

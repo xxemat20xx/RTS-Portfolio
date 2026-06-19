@@ -19,65 +19,125 @@ const ShowcaseProject = ({ project, index, total }) => {
     target: ref,
     offset: ["start end", "end start"],
   });
-  const imgY = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
+  const imgY = useTransform(scrollYProgress, [0, 1], ["-4%", "4%"]);
 
   const handleMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setPos({ x: e.clientX - rect.left, y: e.clientY - rect.top, show: true });
   };
 
+  const isEven = index % 2 === 0;
+
   return (
     <Motion.article
       ref={ref}
       variants={fadeUp}
-      className="group relative grid grid-cols-12 gap-x-4 gap-y-6 py-14 md:py-20 border-t border-white/[0.06]"
+      className="group relative grid grid-cols-12 gap-x-6 gap-y-8 py-16 md:py-24 border-t border-white/[0.06]"
     >
       {/* Meta column */}
-      <div className="col-span-12 md:col-span-3 flex md:flex-col md:sticky md:top-28 md:self-start gap-4 md:gap-8">
-        <div>
-          <div className="text-[10px] font-mono uppercase tracking-[0.25em] text-white/30">
-            {number} — {totalStr}
+      <div
+        className={`col-span-12 md:col-span-3 flex md:flex-col md:sticky md:top-28 md:self-start gap-4 md:gap-6 ${isEven ? "md:order-1" : "md:order-3"
+          }`}
+      >
+        <div className="flex-1">
+          <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/30">
+            {number} <span className="text-white/15">/</span> {totalStr}
           </div>
-          <div className="mt-3 text-[11px] font-mono uppercase tracking-[0.25em] text-white/40">
+          <div className="mt-4 inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.03] text-[10px] font-mono uppercase tracking-[0.2em] text-white/50">
             {project.category || "Product"}
             {project.year ? ` · ${project.year}` : ""}
           </div>
+
+          <h3 className="hidden md:block mt-8 text-2xl lg:text-3xl font-medium tracking-tight text-white leading-[1.05]">
+            {project.projectName}
+          </h3>
+
+          <p className="hidden md:block mt-5 text-white/55 text-[14px] leading-relaxed">
+            {project.projectDescription}
+          </p>
+
+          <div className="hidden md:flex mt-6 flex-wrap gap-1.5">
+            {project.techUsed.map((tech) => (
+              <span
+                key={tech.id}
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-[10.5px] text-white/70 font-mono"
+              >
+                {tech.icon && <img src={tech.icon} alt="" className="w-3 h-3" />}
+                {tech.name}
+              </span>
+            ))}
+          </div>
+
+          <a
+            href={project.projectLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex group/link mt-8 items-center gap-2 text-sm text-white/90 w-fit"
+          >
+            <span className="relative">
+              View project
+              <span className="absolute left-0 -bottom-0.5 h-px w-full bg-white/30 origin-left scale-x-100 group-hover/link:scale-x-0 transition-transform duration-500" />
+              <span className="absolute left-0 -bottom-0.5 h-px w-full bg-white origin-right scale-x-0 group-hover/link:scale-x-100 transition-transform duration-500 delay-100" />
+            </span>
+            <span className="transition-transform group-hover/link:translate-x-1">→</span>
+          </a>
         </div>
       </div>
 
       {/* Image */}
-      <div className="col-span-12 md:col-span-9 lg:col-span-6 lg:col-start-4">
+      <div className="col-span-12 md:col-span-9 md:order-2">
         <a
           href={project.projectLink}
           target="_blank"
           rel="noopener noreferrer"
           onMouseMove={handleMove}
           onMouseLeave={() => setPos((p) => ({ ...p, show: false }))}
-          className="relative block overflow-hidden rounded-[28px] bg-neutral-900 cursor-none"
+          className="relative block overflow-hidden rounded-[28px] cursor-none group/img"
         >
-          {/* gradient ring */}
-          <div className="pointer-events-none absolute -inset-px rounded-[28px] bg-gradient-to-tr from-white/10 via-white/5 to-transparent opacity-60" />
+          {/* gradient frame */}
+          <div className="pointer-events-none absolute -inset-px rounded-[28px] bg-gradient-to-tr from-white/15 via-white/5 to-transparent opacity-80" />
 
-          <div className="relative aspect-[16/10] overflow-hidden rounded-[28px]">
+          {/* image stage — full image visible (object-contain) */}
+          <div className="relative aspect-[16/10] overflow-hidden rounded-[28px] bg-gradient-to-br from-neutral-900 via-neutral-950 to-black">
+            {/* soft halo behind image */}
+            <div className="absolute inset-0 opacity-60">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] rounded-full bg-white/[0.04] blur-3xl" />
+            </div>
+
+            {/* subtle grid */}
+            <div
+              className="absolute inset-0 opacity-[0.06]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+                backgroundSize: "44px 44px",
+              }}
+            />
+
             <Motion.img
               src={project.projectImage}
               alt={project.projectName}
-              style={{ y: imgY, scale: 1.15 }}
-              className="absolute inset-0 w-full h-full object-cover transition duration-[1200ms] ease-out group-hover:scale-[1.22]"
+              style={{ y: imgY }}
+              className="relative z-10 w-full h-full object-contain p-6 md:p-10 transition-transform duration-[1200ms] ease-out group-hover/img:scale-[1.03] drop-shadow-[0_30px_60px_rgba(0,0,0,0.5)]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/10" />
 
-            {/* corner badge */}
-            <div className="absolute top-5 left-5">
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/15 text-[11px] text-white/85">
+            {/* corner badges */}
+            <div className="absolute top-5 left-5 z-20 flex items-center gap-2">
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[11px] text-white/85">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 Live
               </span>
             </div>
 
-            {/* bottom title */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-              <h3 className="text-3xl md:text-5xl font-semibold tracking-tight text-white leading-[1]">
+            <div className="absolute top-5 right-5 z-20">
+              <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/50">
+                {number}
+              </span>
+            </div>
+
+            {/* mobile title overlay */}
+            <div className="md:hidden absolute bottom-0 left-0 right-0 p-5 z-20 bg-gradient-to-t from-black/80 to-transparent">
+              <h3 className="text-2xl font-semibold tracking-tight text-white leading-tight">
                 {project.projectName}
               </h3>
             </div>
@@ -85,7 +145,7 @@ const ShowcaseProject = ({ project, index, total }) => {
             {/* custom cursor */}
             {pos.show && (
               <div
-                className="pointer-events-none absolute z-20 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white text-black grid place-items-center text-xs font-semibold tracking-wider transition-opacity"
+                className="pointer-events-none absolute z-30 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white text-black grid place-items-center text-[11px] font-semibold tracking-wider"
                 style={{ left: pos.x, top: pos.y }}
               >
                 OPEN ↗
@@ -93,39 +153,32 @@ const ShowcaseProject = ({ project, index, total }) => {
             )}
           </div>
         </a>
-      </div>
 
-      {/* Right detail column */}
-      <div className="col-span-12 lg:col-span-3 lg:col-start-10 flex flex-col gap-6">
-        <p className="text-white/60 text-[15px] leading-relaxed">
-          {project.projectDescription}
-        </p>
-
-        <div className="flex flex-wrap gap-1.5">
-          {project.techUsed.map((tech) => (
-            <span
-              key={tech.id}
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-[11px] text-white/70 font-mono"
-            >
-              {tech.icon && <img src={tech.icon} alt="" className="w-3 h-3" />}
-              {tech.name}
-            </span>
-          ))}
+        {/* mobile detail */}
+        <div className="md:hidden mt-6 space-y-5">
+          <p className="text-white/60 text-[15px] leading-relaxed">
+            {project.projectDescription}
+          </p>
+          <div className="flex flex-wrap gap-1.5">
+            {project.techUsed.map((tech) => (
+              <span
+                key={tech.id}
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-[11px] text-white/70 font-mono"
+              >
+                {tech.icon && <img src={tech.icon} alt="" className="w-3 h-3" />}
+                {tech.name}
+              </span>
+            ))}
+          </div>
+          <a
+            href={project.projectLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-white/90"
+          >
+            View project <span>→</span>
+          </a>
         </div>
-
-        <a
-          href={project.projectLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group/link inline-flex items-center gap-2 text-sm text-white/90 w-fit"
-        >
-          <span className="relative">
-            View project
-            <span className="absolute left-0 -bottom-0.5 h-px w-full bg-white/30 origin-left scale-x-100 group-hover/link:scale-x-0 transition-transform duration-500" />
-            <span className="absolute left-0 -bottom-0.5 h-px w-full bg-white origin-right scale-x-0 group-hover/link:scale-x-100 transition-transform duration-500 delay-100" />
-          </span>
-          <span className="transition-transform group-hover/link:translate-x-1">→</span>
-        </a>
       </div>
     </Motion.article>
   );
